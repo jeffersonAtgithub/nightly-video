@@ -1,0 +1,22 @@
+
+.nv-title{
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+.nv-subtitle{
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.item-indention,
+.item-bullet{
+	background: none;
+    border: none;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.item-bullet{
+	padding: 0px 16px;
+}
