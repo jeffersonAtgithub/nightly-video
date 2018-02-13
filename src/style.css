@@ -20,3 +20,42 @@
 .item-bullet{
 	padding: 0px 16px;
 }
+
+.emoticon{
+	padding: 4px 6px 3px 8px;
+    font-size: 25px;
+    background: none;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.emoticon:hover,
+.emoticon.active{
+	background-color: #e3efe2;
+    cursor: pointer;
+}
+
+.emoticon.emoticon-first:hover,
+.emoticon.emoticon-first.active,
+.emoticon.emoticon-third:hover,
+.emoticon.emoticon-third.active
+{
+	color: red;
+}
+
+.emoticon.emoticon-second:hover,
+.emoticon.emoticon-second.active{
+	color: #4ece8f;
+
+}
+
+.gen-report{
+	margin-top: 20px;
+}
+
+#reports{
+	border: 1px solid #ccc;
+    margin-top: 16px;
+    padding: 10px;
+    background-color: #fff4f4;
+}

@@ -6,19 +6,32 @@ class NVGroup extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			subtitlecount: 0
+			subtitlecount: 0,
+			subtitles: [0]
 		}
+		console.log(this);
 	}
 
-	onAddTitle(subtitlecount){
-		this.setState({subtitlecount: subtitlecount+1});
+	onAddTitle(){
+		this.setState({
+			subtitlecount: this.state.subtitlecount+1,
+			subtitles: [...this.state.subtitles, Math.max(...this.state.subtitles) + 1]
+		})
+	}
+
+	onRemoveTitle(key){
+		const arr = this.state.subtitles
+		if(arr.length > 1){
+			arr.splice(arr.indexOf(key), 1)
+			this.setState({subtitles: arr})
+		}
 	}
 
 	render(){
-		let subtitle = [];
-		for(let i = 0; i <= this.state.subtitlecount; i++){
-			subtitle.push(<NVSubTitle key={`subtitle-${i}`} onAddTitle={()=>this.onAddTitle(this.state.subtitlecount)}/>)
-		}
+		const subtitle = this.state.subtitles.map(item=>(
+			<NVSubTitle key={`subtitle-${item}`} onRemoveTitle={()=>this.onRemoveTitle(item)} onAddTitle={()=>this.onAddTitle()}/>
+		));
+
 		return(
 			<div>
 				<NVTitle />
