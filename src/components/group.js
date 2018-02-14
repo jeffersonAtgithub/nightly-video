@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom' 
 import NVTitle from './title'
 import NVSubTitle from './subtitle'
 
@@ -7,9 +8,9 @@ class NVGroup extends Component{
 		super(props)
 		this.state = {
 			subtitlecount: 0,
-			subtitles: [0]
+			subtitles: [0,1,2]
 		}
-		console.log(this);
+		
 	}
 
 	onAddTitle(){
@@ -27,18 +28,22 @@ class NVGroup extends Component{
 		}
 	}
 
+
 	render(){
+		const defaultValues = ['GOALS AND STATUS', 'OTHER ACCOMPLISHMENTS', 'FOR NEXT SESSION']
 		const subtitle = this.state.subtitles.map(item=>(
-			<NVSubTitle key={`subtitle-${item}`} onRemoveTitle={()=>this.onRemoveTitle(item)} onAddTitle={()=>this.onAddTitle()}/>
-		));
+			<NVSubTitle key={`subtitle-${item}`} defaultValue={defaultValues[item]} onRemoveTitle={()=>this.onRemoveTitle(item)} onAddTitle={()=>this.onAddTitle()}/>
+		))
 
 		return(
 			<div>
-				<NVTitle />
+				<NVTitle/>
 				{subtitle}
 			</div>
 		)
 	}
 }
+
+
 
 export default NVGroup

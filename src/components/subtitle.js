@@ -33,7 +33,7 @@ class NVSubTitle extends Component {
 		return(
 			<div className='nv-subtitle'>
 				<div className='input-group'>
-					<input className='form-control' placeholder='Sub title goes here'/>
+					<input defaultValue={this.props.defaultValue} className='form-control nv-subtitle-input' placeholder='Sub title goes here'/>
 					<span className='input-group-addon' onClick={()=>this.props.onAddTitle()}>
 						<i className='fa fa-plus'></i>
 					</span>

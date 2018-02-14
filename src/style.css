@@ -4,6 +4,11 @@
 	border: 1px solid #ddd;
 	border-bottom: none;
 }
+
+.nv-title-input, .nv-subtitle-input{
+	font-weight: bold;
+}
+
 .nv-subtitle{
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -58,4 +63,17 @@
     margin-top: 16px;
     padding: 10px;
     background-color: #fff4f4;
+    margin-bottom: 20px;
+    position:relative;
+}
+
+.copy-report{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
+
+.hidden-report-container{
+	position: absolute;
+	right: 9999999999999999999px;
 }
